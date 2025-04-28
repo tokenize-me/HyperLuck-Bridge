@@ -1,7 +1,13 @@
 'use client'
 
 import React from 'react';
-import WormholeConnect, { WormholeConnectConfig, nttRoutes } from '@wormhole-foundation/wormhole-connect';
+import WormholeConnect, { WormholeConnectConfig, WormholeConnectTheme, nttRoutes } from '@wormhole-foundation/wormhole-connect';
+
+const theme: WormholeConnectTheme = {
+  mode: 'dark',
+  primary: '#00BCD4',
+  font: 'Helvetica; sans-serif',
+};
 
 const config: WormholeConnectConfig = {
   network: 'Mainnet',
@@ -64,7 +70,7 @@ const config: WormholeConnectConfig = {
 }
 
 const Wormhole: React.FC = () => {
-  return <WormholeConnect config={config}/>
+  return <WormholeConnect config={config} theme={theme} />
 }
 
 export default Wormhole
